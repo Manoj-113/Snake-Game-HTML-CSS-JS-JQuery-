@@ -1,7 +1,24 @@
 $(function(){
-    var canvas = $('#canvas')[0];
+    var canvas = $("#canvas")[0];
     var ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "red";
-    ctx.fillRect(50, 100, 10, 10);
+    var snake = [
+        {x: 50, y: 100},
+        {x: 50, y: 90},
+        {x: 50, y: 80},
+    ];
+    var snakeWidth = snakeHeight = 10;
+
+    drawSnake();
+
+    function drawSnake(){
+        $.each(snake, function(index, value){
+            ctx.fillStyle = 'red';
+            ctx.fillRect(value.x, value.y, snakeWidth, snakeHeight);
+            ctx.strokeStyle = 'white';
+            ctx.strokeRect(value.x, value.y, snakeWidth, snakeHeight);
+        });
+    }
+
+
 });
