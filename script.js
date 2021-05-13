@@ -5,9 +5,9 @@
     var ctx = canvas.getContext("2d");
 
     var snake = [
-        {x:50, y: 100},
-        {x: 50, y: 90},
-        {x: 50, y: 80},
+        {x:50, y: 100, oldX: 0, oldY:0},
+        {x: 50, y: 90, oldX: 0, oldY:0},
+        {x: 50, y: 80, oldX: 0, oldY:0},
     ];
     var snakeWidth = snakeHeight = 10;
     var blockSize = 10;
@@ -31,10 +31,17 @@
 
     function moveSnake(){
         $.each(snake, function(index, value){
+            snake[index].oldX = value.x;
+            snake[index].oldY = value.y;
+
            if(index == 0){
                if(keyPressed==DOWN){
                    snake[index].y = value.y + blockSize;
                }
+           }else{
+               snake[index].x = snake[index - 1].oldX;
+               snake[index].y = snake[index - 1].oldY;
+
            }
         });
     }
@@ -50,7 +57,7 @@
     }
 
     function clearCanvas(){
-        ctx.clearRect();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
 });
