@@ -68,7 +68,8 @@
     }
 
     function drawFood(){
-        
+        ctx.fillStyle = 'yellow';
+            ctx.fillRect(food.x, food.y, snakeWidth, snakeHeight);
     }
 
     function clearCanvas(){
@@ -76,6 +77,9 @@
     }
 
     $(document).keydown(function(e){
+        if($.inArray(e.which, [DOWN,UP,LEFT,RIGHT])!= -1){
+            keyPressed = checkKeyIsAllowed(e.which);
+        }
         keyPressed = checkKeyIsAllowed(e.which);
     });
 
