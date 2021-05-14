@@ -79,8 +79,9 @@
         }else if(tempKey == LEFT){
             key = (keyPressed != RIGHT) ? tempKey : keyPressed;
         }else if(tempKey == RIGHT){
-            key = (keyPressed != DOWN) ? tempKey : keyPressed;
+            key = (keyPressed != LEFT) ? tempKey : keyPressed;
         }
+        return key;
     }
 
 });
