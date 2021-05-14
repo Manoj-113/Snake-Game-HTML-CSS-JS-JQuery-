@@ -9,6 +9,10 @@
         {x: 50, y: 90, oldX: 0, oldY:0},
         {x: 50, y: 80, oldX: 0, oldY:0},
     ];
+
+    var food = { x : 200, y :200, eaten: false};
+
+
     var snakeWidth = snakeHeight = 10;
     var blockSize = 10;
 
@@ -25,6 +29,7 @@
 
         console.log('loop running')
         clearCanvas();
+        drawFood();
         moveSnake();
         drawSnake();
     }
@@ -60,6 +65,10 @@
             ctx.strokeStyle = 'white';
             ctx.strokeRect(value.x, value.y, snakeWidth, snakeHeight);
         });
+    }
+
+    function drawFood(){
+        
     }
 
     function clearCanvas(){
