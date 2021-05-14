@@ -67,7 +67,20 @@
     }
 
     $(document).keydown(function(e){
-        keyPressed = e.which;
+        keyPressed = checkKeyIsAllowed(e.which);
     });
+
+    function checkKeyIsAllowed(tempKey){
+        let key;
+        if(tempKey == DOWN){
+            key = (keyPressed != UP) ? tempKey : keyPressed;
+        }else if(tempKey == UP){
+            key = (keyPressed != DOWN) ? tempKey : keyPressed;
+        }else if(tempKey == LEFT){
+            key = (keyPressed != RIGHT) ? tempKey : keyPressed;
+        }else if(tempKey == RIGHT){
+            key = (keyPressed != DOWN) ? tempKey : keyPressed;
+        }
+    }
 
 });
