@@ -37,7 +37,13 @@
            if(index == 0){
                if(keyPressed==DOWN){
                    snake[index].y = value.y + blockSize;
-               }
+               } else if(keyPressed==UP){
+                    snake[index].y = value.y - blockSize;
+               }else if(keyPressed==RIGHT){
+                    snake[index].x = value.x + blockSize;
+                }else if(keyPressed==LEFT){
+                    snake[index].x = value.x - blockSize;
+                }
            }else{
                snake[index].x = snake[index - 1].oldX;
                snake[index].y = snake[index - 1].oldY;
