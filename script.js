@@ -67,14 +67,14 @@
 
             if(index == 0){
                 if(didEatFood(value.x, food.y, snakeWidth, snakeHeight)){
-
+                    console.log("food ate !")
                 }
             }
         });
     }
 
     function didEatFood(x, y){
-        return ;
+        return food.x === x && food.y;
     }
 
     function drawFood(){
