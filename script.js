@@ -69,7 +69,7 @@
             if(index == 0){
                 if(didEatFood(value.x, food.y, snakeWidth, snakeHeight)){
                     score++;
-                    $('#score').val(score);
+                    $('#score').text(score);
                 }
             }
         });
