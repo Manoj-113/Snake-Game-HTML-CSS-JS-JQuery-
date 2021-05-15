@@ -64,7 +64,17 @@
             ctx.fillRect(value.x, value.y, snakeWidth, snakeHeight);
             ctx.strokeStyle = 'white';
             ctx.strokeRect(value.x, value.y, snakeWidth, snakeHeight);
+
+            if(index == 0){
+                if(didEatFood(value.x, food.y, snakeWidth, snakeHeight)){
+
+                }
+            }
         });
+    }
+
+    function didEatFood(x, y){
+        return ;
     }
 
     function drawFood(){
