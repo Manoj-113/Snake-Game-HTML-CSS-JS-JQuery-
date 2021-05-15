@@ -67,6 +67,9 @@
             ctx.strokeRect(value.x, value.y, snakeWidth, snakeHeight);
 
             if(index == 0){
+                if(collided(value.x, value.y)){
+                    console.log('Game Over...!!')
+                }
                 if(didEatFood(value.x, food.y, snakeWidth, snakeHeight)){
                     score++;
                     $('#score').text(score);
@@ -76,10 +79,16 @@
         });
     }
 
+    function collided(x, y) {
+        return snake.filter(function(value,index){
+            return index != 0 && value.x == x && value.y == y;
+        }).length > 0;
+    }
+
     function makeSnakeBigger(){
         snake.push({
             x:snake[snake.length - 1].oldX,
-            x:snake[snake.length - 1].oldY
+            y:snake[snake.length - 1].oldY
         });
     }
 
