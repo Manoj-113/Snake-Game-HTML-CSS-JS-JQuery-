@@ -22,6 +22,7 @@
     const DOWN =40;
 
     var keyPressed = DOWN;
+    var score = 0;
 
     setInterval(gameLoop, 1000);
 
@@ -67,7 +68,8 @@
 
             if(index == 0){
                 if(didEatFood(value.x, food.y, snakeWidth, snakeHeight)){
-                    console.log("food ate !")
+                    score++;
+                    $('#score').val(score);
                 }
             }
         });
